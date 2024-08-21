@@ -37,71 +37,71 @@ class Door:
       self._door_is_open = True
 
   def close_the_door(self):
-      """
-      Methode für das schliessen der Türe.
-      Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
-      """
-      self._door_is_open = False
+    """
+    Methode für das schliessen der Türe.
+    Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
+    """
+    self._door_is_open = False
 
   def lock_the_door(self):
-      """
-      Methode für das verriegeln der Türe.
-      Das ist nur möglich, wenn die Türe nicht offen ist.
-      Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
-      """
-      if not self._door_is_open:
-          self._door_is_locked = self._the_door_lock.lock()
+    """
+    Methode für das verriegeln der Türe.
+    Das ist nur möglich, wenn die Türe nicht offen ist.
+    Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+    """
+    if not self._door_is_open:
+      self._door_is_locked = self._the_door_lock.lock()
 
   def unlock_the_door(self):
-      """
-      Methode für das entriegeln der Türe
-      Das ist nur möglich, wenn die Türe verriegelt ist.
-      Für das entriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
-      """
-      if self._door_is_locked:
-          self._door_is_locked = self._the_door_lock.unlock()
+    """
+    Methode für das entriegeln der Türe
+    Das ist nur möglich, wenn die Türe verriegelt ist.
+    Für das entriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
+    """
+    if self._door_is_locked:
+      self._door_is_locked = self._the_door_lock.unlock()
 
   def test(self):
-      """
-      schreibt alle Attribute in den StdOut
-      """
-      print(f'Türfarbe {self.color}'
-            f'Türe offen: {self._door_is_open}'
-            f'Türe verriegelt: {self._door_is_locked}')
+    """
+    schreibt alle Attribute in den StdOut
+    """
+    print(f'Türfarbe {self.color}'
+          f'Türe offen: {self._door_is_open}'
+          f'Türe verriegelt: {self._door_is_locked}')
   # Am Ende folgen die getter- und setter-Methoden für die Attribute der Klasse
   # getter werden mit der Anotation @property markiert.
   @property
   def door_is_open(self):
-      """
-      getter-Methode für den Zustand door_is_open
-      :return: true, wenn die Türe offen ist, sonst false
-      """
-      return self._door_is_open
+    """
+    getter-Methode für den Zustand door_is_open
+    :return: true, wenn die Türe offen ist, sonst false
+    """
+    return self._door_is_open
 
   @property
   def door_ist_locked(self):
-      """
-      getter-Methode für den Zustand door_is_locked
-      :return: true, wenn die Türe verriegelt ist, sonst false
-      """
-      return self._door_is_locked
+    """
+    getter-Methode für den Zustand door_is_locked
+    :return: true, wenn die Türe verriegelt ist, sonst false
+    """
+    return self._door_is_locked
 
   @property
   def color(self):
-      """
-      getter-Methode für die Eigenschaft color
-      :return: die Farbe des Objekts
-      """
-      return self._color
+    """
+    getter-Methode für die Eigenschaft color
+    :return: die Farbe des Objekts
+    """
+    return self._color
 
   # setter werden mit der Anotation @name.setter markiert.
   @color.setter
   def color(self, new_color):
-      """
-      setter-Methode für die Eigenschaft color
-      :param new_color:
-      """
-      self._color = new_color
+    """
+    setter-Methode für die Eigenschaft color
+    :param new_color:
+    """
+    self._color = new_color
 
 
 """
@@ -114,13 +114,13 @@ class DoorLock:
   dummy Klasse, damit in der Klasse Tuere kein Fehler auftritt
   """
   def __init__(self):
-      print("ein Schloss erzeugt")
+    print("ein Schloss erzeugt")
 
   def lock(self):
-      return True
+    return True
 
   def unlock(self):
-      return False
+    return False
 
 
 if __name__ == "__main__":
