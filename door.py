@@ -123,8 +123,6 @@ class DoorLock:
     def unlock(self):
         return False
 
-
-# Hier die main-Methode festlegen
 if __name__ == "__main__":
     print("Test für Tür-Objekt")
     the_door_lock = DoorLock()
